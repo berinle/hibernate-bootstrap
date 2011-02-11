@@ -7,13 +7,17 @@
         <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.connection.password"></property>
-        <property name="hibernate.connection.url">jdbc:hsqldb:mem:devDB</property>
+        <!--<property name="hibernate.connection.url">jdbc:hsqldb:mem:devDB</property>-->
         <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
-        <!--<property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/springtx</property>-->
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/hibernate-bootstrap</property>
         <mapping class="Course"/>
 		<mapping class="Student"/>
+		<mapping class="Institution"/>
+        <mapping class="domain.CourseEntity"/>
+        <mapping class="domain.InstitutionEntity"/>
+        <mapping class="domain.StudentEntity"/>
 
-	</session-factory>
+    </session-factory>
 </hibernate-configuration>

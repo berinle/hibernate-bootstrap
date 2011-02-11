@@ -14,6 +14,13 @@ public class Student {
     )
     private Set<Course> courses;
 
+    @ManyToMany
+    @JoinTable(name="INSTITUTION",
+            joinColumns = @JoinColumn(name="STUDENT_ID"),
+            inverseJoinColumns = {@JoinColumn(name="INSTITUTION_ID"), @JoinColumn(name="STUDENT_ID")}
+    )
+    private Set<Institution> institutions;
+
     public Long getId() {
         return id;
     }
@@ -36,5 +43,13 @@ public class Student {
 
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
+    }
+
+    public Set<Institution> getInstitutions() {
+        return institutions;
+    }
+
+    public void setInstitutions(Set<Institution> institutions) {
+        this.institutions = institutions;
     }
 }
