@@ -9,8 +9,11 @@ public class Institution {
     @EmbeddedId
     private InstitutionId institutionId;
 
-    @Transient //@ManyToMany(mappedBy = "institutions")
-    private Set<Student> students;
+//    @Transient //@ManyToMany(mappedBy = "institutions")
+//    private Set<Student> students;
+
+    @ManyToOne @JoinColumn(name="STUDENT_ID", insertable = false, updatable = false)
+    private Student student;
 
     public InstitutionId getInstitutionId() {
         return institutionId;
@@ -20,13 +23,13 @@ public class Institution {
         this.institutionId = institutionId;
     }
 
-    public Set<Student> getStudents() {
+/*    public Set<Student> getStudents() {
         return students;
     }
 
     public void setStudents(Set<Student> students) {
         this.students = students;
-    }
+    }*/
 }
 
 @Embeddable

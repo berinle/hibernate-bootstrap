@@ -14,11 +14,12 @@ public class Student {
     )
     private Set<Course> courses;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(name="INSTITUTION",
             joinColumns = @JoinColumn(name="STUDENT_ID"),
-            inverseJoinColumns = {@JoinColumn(name="INSTITUTION_ID"), @JoinColumn(name="STUDENT_ID")}
-    )
+            inverseJoinColumns = {@JoinColumn(name="INSTITUTION_ID")}
+    )*/
+    @OneToMany(mappedBy = "student")
     private Set<Institution> institutions;
 
     public Long getId() {

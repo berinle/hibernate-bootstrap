@@ -11,7 +11,11 @@
         <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
-        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/hibernate-bootstrap</property>
+        <!--<property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/hibernate-bootstrap</property>-->
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/hboot</property>
+
+        <property name="current_session_context_class">thread</property>
+
         <mapping class="Course"/>
 		<mapping class="Student"/>
 		<mapping class="Institution"/>
